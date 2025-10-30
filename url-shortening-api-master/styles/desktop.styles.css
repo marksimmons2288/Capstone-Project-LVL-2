@@ -1,0 +1,24 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+  background-color: rgb(18, 234, 234);
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+  
+}
+.nav_bar {
+    display: flex;
+    justify-items: flex-start;
+    justify-content: space-around;
+}
+.sign_in_btns{
+    
+}
+
