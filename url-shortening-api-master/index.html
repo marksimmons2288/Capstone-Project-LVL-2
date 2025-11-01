@@ -18,10 +18,11 @@
    <link rel="stylesheet" href="styles/desktop.styles.css">
 </head>
 <body>
+ 
+
+<header>
 <!-- Flex row this across the top of page -->
- <header class="form-header">
-  <div class="form-header_container">
-    <nav class="nav-bar" aria-label="Main navigation">
+  <nav class="nav-bar" aria-label="Main navigation">
     <img src="images/logo.svg"          class="nav-bar_title" alt="Shortly logo">
     <!-- Links with Aria -->
      <div role="navigation" aria-label="Navagation Links" class="nav-bar_links">
@@ -34,57 +35,59 @@
       <div class="auth-links">
       <a href="#" class="login_btn">Login</a>
       <a href="#" class="sign_up_btn">Sign Up</a>
-      </div>
+    </div>
   </nav>
-  </div>
- </header>
-  <!-- Main content -->
+</header>
+ 
+<!-- Main content -->
 <main>
-   <section class="main-content">
-    <div class="main-content_container">
+   <section class="main-form_container">
           <!-- Title -->
-      <div class="main-content_title">
-      <h1>More than just shorter links</h1>
+    <h1>More than just shorter links</h1>
   <!-- Subtitle -->
-  <p class="main-form_subtitle"></p>Build your brand’s recognition and get detailed <br> insights 
-  on how your links are performing.</p>
+    <p class="main-form_subtitle">
+     Build your brand’s recognition and get detailed <br> insights 
+     on how your links are performing.
+   </p>
+      
   <!-- Information button (labeled "Get Started") -->
-  <button type="button" class="start_btn">Get Started</button>
+    <button type="button" class="start_btn">Get Started</button>
+   
    <!-- Main content illustration w/ hidden image from aria -->
   <div class="main-form_img" aria-hidden="true">
          <img src="images/illustration-working.svg" alt="Illustration of a person working at a computer desk">
     </div>
-  </div>
- </div>
-</section>
+   </section>
 
 <!-- Input URL Section -->
- <section class="url-shortener">
-  <fieldset class="url-shortener_container">
-    
+  <section class="url-shortener_container">
+    <form class="main-form" id="mainForm">
     <label for="urlInput" class="sr-only">Enter URL</label>
+    
     <div class="url-shortener_input_field">
-      <input type="url" name="url" id="urlInput" placeholder="Shorten a link here" aria-required="true">
-      
+      <input type="url" name="url" id="urlInput" placeholder="Shorten a link here..." aria-required="true" required>
+
+
+      <img src="images/bg-shorten-desktop.svg" alt="Illustration around input field">
+
       <!-- Submit button -->
+      
       <button type="submit"class="shorten_it_btn" name="button">Shorten It!</button>
-    </div>
     
     <!-- Render Shorten URL w/ Aria role status to announce dynamic updates  -->
-     <div id="result"role="staus"></div>
-
-   </form>
+     <div id="result"role="status"></div>
+    
+    </form>
   </section>
 </main>
 
-
-    
-     
- 
-  <!-- Footer -->
+     <!-- Footer -->
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+  <!-- JavaScript -->
+   <script src="script/main.js"></script>
 </body>
 </html>
