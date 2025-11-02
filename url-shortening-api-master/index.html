@@ -25,11 +25,13 @@
   <nav class="nav-bar" aria-label="Main navigation">
     <img src="images/logo.svg"          class="nav-bar_title" alt="Shortly logo">
     <!-- Links with Aria -->
-     <div role="navigation" aria-label="Navagation Links" class="nav-bar_links">
+     <div role="navigation" aria-label="Navagation Links" 
+     
+     class="nav-bar_links">
       
-      <a href="#" class="features_link">Features</a>
-      <a href="#" class="pricing_link">Pricing</a>
-      <a href="#" class="resources_link">Resources</a>
+      <a href="#" >Features</a>
+      <a href="#" >Pricing</a>
+      <a href="#" >Resources</a>
      </div>
 
      <!-- Authorization links w/ hover btn styles -->
@@ -44,19 +46,23 @@
 <main>
    <section class="main-form_container">
           <!-- Title -->
-    <h1>More than just shorter links</h1>
+    <div class="main-form_text">
+      <h1>More than just shorter links</h1>
   <!-- Subtitle -->
-    <p class="main-form_subtitle">
+      <p class="main-form_subtitle">
      Build your brand’s recognition and get detailed <br> insights 
      on how your links are performing.
-   </p>
+    </p>
+      
       
   <!-- Information button (labeled "Get Started") -->
     <button type="button" class="start_btn">Get Started</button>
+      </div>
    
    <!-- Main content illustration w/ hidden image from aria -->
-  <div class="main-form_img" aria-hidden="true">
-         <img src="images/illustration-working.svg" alt="Illustration of a person working at a computer desk">
+  <div class="main-form_img"
+    aria-hidden="true">
+      <img src="images/illustration-working.svg" alt="Illustration of a person working at a computer desk">
     </div>
    </section>
 

@@ -2,17 +2,21 @@
 *,
 *::before,
 *::after {
-    margin: 0 auto;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
+
+
 body {
- 
- margin: 0 auto;
+ background-color: (0, 0%, 75%);
+ margin: 0 auto ;
  padding: 20px;
  width: 100%;
  min-height: 100vh;
+ font-size: 18px;
+
 }
 
 .nav-bar {
@@ -22,16 +26,54 @@ body {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+   
 }
 
-.nav-bar_links {
+.nav-bar_links a:hover {
     display: flex;
     gap: 3rem;
-    
+    color: hsl(260, 8%, 14%);
 }
 
 .nav-bar_links,.auth-links {
     display: flex;
     gap: 3rem;
+   
+}
+
+ a {
+    color: hsl(257, 7%, 63%);
+    text-decoration: none;
+ }
+
+.main-form_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.main-form_text {
+    flex:1;
+    
+}
+
+.main-form_img {
+    flex:1;
+    display: flex;
+    justify-content: center;
+}
+
+.main-form_img img {
+    width: 100%;
+    max-width: 500px;
+}
+
+.main-form_subtitle {
+    color: hsl(257, 7%, 63%);
 }
 
