@@ -2,20 +2,36 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
+    padding: 20px;
     box-sizing: border-box;
 }
 
 body {
- max-width: 1200px;
+ 
  margin: 0 auto;
- overflow-x: hidden;
  padding: 20px;
- border: black solid;
+ width: 100%;
+ min-height: 100vh;
 }
 
-.nav-bar{
+.nav-bar {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-bar_links {
+    display: flex;
+    gap: 3rem;
+    
+}
+
+.nav-bar_links,.auth-links {
+    display: flex;
+    gap: 3rem;
 }
 
