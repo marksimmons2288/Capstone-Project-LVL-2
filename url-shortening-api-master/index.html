@@ -16,6 +16,10 @@
 
   <!-- CSS Styles -->
    <link rel="stylesheet" href="styles/desktop.styles.css">
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
  
@@ -29,15 +33,15 @@
      
      class="nav-bar_links">
       
-      <a href="#" >Features</a>
-      <a href="#" >Pricing</a>
-      <a href="#" >Resources</a>
+      <a href="#" id="featuresLink">Features</a>
+      <a href="#" id="pricingLink" >Pricing</a>
+      <a href="#" id="resourcesLink" >Resources</a>
      </div>
 
      <!-- Authorization links w/ hover btn styles -->
       <div class="auth-links">
-      <a href="#" class="login_btn">Login</a>
-      <a href="#" class="sign_up_btn">Sign Up</a>
+      <a href="#" id="loginBtn">Login</a>
+      <a href="#" id="signUpBtn">Sign Up</a>
     </div>
   </nav>
 </header>
@@ -79,7 +83,7 @@
 
       <!-- Submit button -->
       
-      <button type="submit"class="shorten_it_btn" name="button">Shorten It!</button>
+      <button type="submit"class="shorten_it_btn" id="shortenBtn" name="button">Shorten It!</button>
     
     <!-- Render Shorten URL w/ Aria role status to announce dynamic updates  -->
      <div id="result"role="status"></div>

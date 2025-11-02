@@ -10,12 +10,14 @@
 
 
 body {
- background-color: (0, 0%, 75%);
+ background-color:white;
  margin: 0 auto ;
  padding: 20px;
  width: 100%;
  min-height: 100vh;
  font-size: 18px;
+ font-family: Poppins;
+ font-weight: 700;
 
 }
 
@@ -26,13 +28,13 @@ body {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    gap: 3rem;
    
 }
 
 .nav-bar_links a:hover {
-    display: flex;
-    gap: 3rem;
     color: hsl(260, 8%, 14%);
+    
 }
 
 .nav-bar_links,.auth-links {
@@ -41,9 +43,18 @@ body {
    
 }
 
+.auth-links a:hover {
+    background-color: hsl(180, 66%, 49%);
+    border-radius: 15px;
+    color: white;
+    padding: 10px;
+}
+
  a {
     color: hsl(257, 7%, 63%);
     text-decoration: none;
+    font-weight: 700;
+    cursor: grab;
  }
 
 .main-form_container {
@@ -73,7 +84,22 @@ body {
     max-width: 500px;
 }
 
+
 .main-form_subtitle {
     color: hsl(257, 7%, 63%);
+    font-weight: 500;
+}
+
+.start_btn {
+    background-color: hsl(180, 66%, 49%);
+    border-radius: 15px;
+    color: white;
+    padding: 10px;
+}
+.start_btn :hover {
+background-color: hsl(180, 66%, 49%);
+    border-radius: 15px;
+    color: white;
+    padding: 10px;
 }
 
