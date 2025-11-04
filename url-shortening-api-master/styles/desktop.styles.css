@@ -7,12 +7,6 @@
     box-sizing: border-box;
 }
 
-html, body {
-    overflow-x: auto;
-}
-body{
-    min-width: 1600px;
-}
 
 body {
  background-color:white;
@@ -81,7 +75,8 @@ text-decoration: none;
 .main-form_container {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     gap: 5rem;
     max-width: 1440px;
     margin-left: 0 auto;
@@ -96,7 +91,7 @@ text-decoration: none;
     flex-direction: column;
     margin-right:2rem ;
     font-size: 24px;
-    margin-right: auto;
+    line-height: 1.2;
     
 }
 
@@ -137,7 +132,7 @@ background-color: hsl(180, 66%, 69%);
     flex-direction: row;
     width: 75%;
     padding: 0px 20px;
-    margin-top: 3rem;
+    margin-top: 8rem;
     
 }
 
