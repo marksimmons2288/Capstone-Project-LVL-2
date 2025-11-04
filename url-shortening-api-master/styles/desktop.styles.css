@@ -7,7 +7,12 @@
     box-sizing: border-box;
 }
 
-
+html, body {
+    overflow-x: auto;
+}
+body{
+    min-width: 1600px;
+}
 
 body {
  background-color:white;
@@ -18,42 +23,58 @@ body {
  font-size: 18px;
  font-family: Poppins;
  font-weight: 700;
+ min-height: 100vh;
 
 }
 
-.nav-bar {
+
+
+.nav-bar { 
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 3rem;
-   
+    max-width: 1440px;
+    margin: 0  auto;
+    text-decoration: none;
+}
+
+.nav-bar_links{
+    display: flex;
+    gap: 6rem;
+    margin-left: 2rem;
+    list-style: none;
+}
+
+.nav-bar_links a {
+color: hsl(257, 7%, 63%);
+text-decoration: none;
 }
 
 .nav-bar_links a:hover {
     color: hsl(260, 8%, 14%);
     
 }
-
-.nav-bar_links,.auth-links {
+.auth-links {
     display: flex;
-    gap: 3rem;
-   
+    margin-left: 20%;
+    gap: 1rem;
+    list-style: none;
+  
+    /*Styling  */
 }
-
-.auth-links a:hover {
-    background-color: hsl(180, 66%, 49%);
-    border-radius: 15px;
-    color: white;
-    padding: 10px;
-}
-
- a {
+.auth-links a {
     color: hsl(257, 7%, 63%);
-    text-decoration: none;
+    border-radius: 20px;
+    background-color: transparent;
     font-weight: 700;
+    padding: 6px 16px;
+    text-decoration: none;
+}
+/* Could not find small hand w/ pionter */
+ .auth-links a:hover {
+    background-color: hsl(180, 66%, 69%);
+    color: white;
     cursor: grab;
  }
 
@@ -61,45 +82,111 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 0;
+    gap: 5rem;
+    max-width: 1440px;
+    margin-left: 0 auto;
+    padding: 2rem 20px;
+    position: relative;
+    height: 100%;
+   
 }
 
 .main-form_text {
-    flex:1;
+    display: flex;
+    flex-direction: column;
+    margin-right:2rem ;
+    font-size: 24px;
+    margin-right: auto;
     
 }
 
 .main-form_img {
-    flex:1;
-    display: flex;
-    justify-content: center;
+    position: absolute;
+    margin-left: 50%;
+    top: 0;
+    width: 800px;
+    height: auto;
+    margin-right: 10%;
+    
 }
-
-.main-form_img img {
-    width: 100%;
-    max-width: 500px;
-}
-
 
 .main-form_subtitle {
     color: hsl(257, 7%, 63%);
     font-weight: 500;
+    margin: 1rem 0 2rem 0;
+}
+/* Horizontal padding */
+#getStarted {
+    display: inline-block;  
+    background-color: hsl(180, 66%, 49%);
+    border-radius: 25px;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    
+    
+}
+#getStarted:hover {
+background-color: hsl(180, 66%, 69%);
+    
 }
 
-.start_btn {
-    background-color: hsl(180, 66%, 49%);
-    border-radius: 15px;
-    color: white;
-    padding: 10px;
+.url-shortener_container {
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    padding: 0px 20px;
+    margin-top: 3rem;
+    
 }
-.start_btn :hover {
-background-color: hsl(180, 66%, 49%);
-    border-radius: 15px;
-    color: white;
-    padding: 10px;
+
+    
+.url-bg {
+    position: relative;
+    width:100% ;
+    margin: 0 auto;
+
 }
+
+.url-bg_img {
+    width: 100%;
+    border-radius: 12px;
+    background-color: hsl(257, 27%, 26%)
+
+}
+
+/* Position elements in the form */
+.url-form {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+   
+}
+
+.url-form_input {
+    padding: 0.9rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 800px;
+    margin-right: 2%;
+}
+
+.url-form_submit {
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: hsl(180,66%,49%);
+    font-size: 1rem;
+    font-weight: 700;
+    width: 200px;
+}
+
+.url-form_submit:hover {
+    background-color:hsl(180, 66%, 49%) ;
+}
+
+
 
