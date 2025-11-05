@@ -14,6 +14,8 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 
+   
+
   <!-- CSS Styles -->
    <link rel="stylesheet" href="styles/desktop.styles.css">
   
@@ -67,16 +69,17 @@
     <div class="url-bg">
       <img src="images/bg-shorten-desktop.svg" alt="" aria-hidden="true" class="url-bg_img">
      
-   <form class="url-form" id="mainForm">
-    <input type="url" name="url" class="url-form_input" id="urlInput" placeholder="Shorten a link here..." aria-required="true" required>
-
-    <button type="submit"class="url-form_submit" id="shortenBtn" name="button">Shorten It!</button>
-    </form>
+  <form class="url-form" id="mainForm">
+   <div class="input-message">
+    <input type="url" name="url" class="url-form_input" id="urlInput"
+    placeholder="Shorten a link here..." aria-required="true">
+  <div id="result"role="status"></div>
+</div>
+<button type="submit"class="url-form_submit"         id="shortenBtn" name="button">Shorten It!</button>
+   
+   </form>
   </div>
-
-  <!-- Render Shorten URL w/ Aria role status to announce dynamic updates  -->
- <div id="result"role="status"></div>
-  </section>
+ </section>
 </main>
 
      <!-- Footer -->
@@ -85,7 +88,8 @@
     Coded by <a href="#">Your Name Here</a>.
   </footer>
   </div>
-
+<!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <!-- JavaScript -->
    <script src="script/main.js"></script>
 </body>
