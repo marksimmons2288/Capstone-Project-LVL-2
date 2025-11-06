@@ -55,6 +55,7 @@ async function shortenUrl( longUrl) {
 //  Reset input & message when user types
 urlInput.addEventListener('input' , () => {
     urlInput.style.border = '2px solid hsl(0, 0%, 80%)';
+    urlInput.classList.remove('error');
     resultMessage.textContent = '';
     resultMessage.style.color = '';
     console.log('User is typing...');
@@ -78,8 +79,11 @@ const longUrl = urlInput.value.trim();
          urlInput.classList.add('error');
          urlInput.style.border = '3px solid hsl(0, 87%, 67%)';
          return;
+      }else {
+        urlInput.classList.remove('error');
+      }   
 
-    }       
+          
 // Conditional for not valid URL syntax
     if (!isValidUrl(longUrl)) {
     
@@ -107,7 +111,7 @@ if  (result.success) {
     resultMessage.style.color = 'green';
     resultMessage.innerHTML =
     `<p> Shorten URL: <br> ${result.data.result_url}<p>`;
-    }else { (result.statusCode) 
+    }else { 
     console.log('Failed to shorten URL');
     resultMessage.style.color = 'hsl(0, 87%, 67%)';
     resultMessage.textContent = ` Error Code Status: ${result.statusCode}`;

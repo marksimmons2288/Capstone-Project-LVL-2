@@ -7,6 +7,9 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+}
 
 body {
  background-color:white;
@@ -49,11 +52,13 @@ body {
 }
 .auth-links {
     display: flex;
-    margin-left: 25rem;
+    margin-left: 25%;
     gap: 1rem;
     list-style: none;
   
 }
+
+
 .auth-links a {
     color: hsl(257, 7%, 63%);
     border-radius: 20px;
@@ -63,10 +68,15 @@ body {
     text-decoration: none;
 }
 /* Could not find small hand w/ pionter */
- .auth-links a:hover {
-    background-color: hsl(180, 66%, 69%);
-    color: white;
-    cursor: grab;
+
+#signUpBtn {
+     background-color: hsl(180, 66%, 49%);
+     color: white;
+ }
+
+ #signUpBtn:hover {
+   background-color: hsl(180, 66%, 69%);
+    color: white;  
  }
 
 .main-form_container {
@@ -117,6 +127,7 @@ body {
     padding: 12px 24px;
     text-align: center;
     text-decoration: none;
+    width: 37%;
     
 }
 
@@ -187,6 +198,7 @@ body {
     font-size: 1rem;
     font-weight: 700;
     width: 250px;
+
 }
 
 .url-form_submit:hover {
