@@ -16,9 +16,9 @@
 
    
 
-  <!-- CSS Styles -->
-   <link rel="stylesheet" href="styles/desktop.styles.css">
-  
+              <!-- CSS Styles -->
+<link rel="stylesheet" href="styles/desktop.styles.css">
+               <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -27,16 +27,17 @@
  
 
 <header>
-<!-- Flex row this across the top of page -->
+                  <!-- Nav-Bar-->
   <nav class="nav-bar" aria-label="Main navigation">
     <img src="images/logo.svg"          class="nav-bar_title" alt="Shortly logo">
      
-    <ul class="nav-bar_links" role="navigation"    aria-label="Navagation Links">
+    <ul class="nav-bar_links" 
+    role="navigation"    aria-label="Navagation Links">
       <li><a href="#" id="featuresLink">Features</a></li>
       <li><a href="#" id="pricingLink" >Pricing</a></li>
       <li><a href="#" id="resourcesLink" >Resources</a></li>
     </ul>
-        <!-- Authorization links w/ hover btn styles -->
+            <!-- Authorization links -->
     <ul class="auth-links">
      <li><a href="#" id="loginBtn">Login</a></li>
      <li><a href="#" id="signUpBtn">Sign Up</a></li>
@@ -44,13 +45,13 @@
   </nav>
 </header>
  
-  <!-- Main content -->
+         <!-- Main content -->
 <main>
    <section class="main-form_container">
           <!-- Title -->
     <div class="main-form_text">
       <h1>More than just <br> shorter links</h1>
-  <!-- Subtitle -->
+          <!-- Subtitle -->
     <p class="main-form_subtitle">
      Build your brand’s recognition and get detailed<br>insights 
      on how your links are performing.
@@ -64,33 +65,46 @@
     </div>
   </figure>
 </section>
-<!-- Input URL Section -->
+            <!-- Input URL Section -->
   <section class="url-shortener_container">
     <div class="url-bg">
-      <img src="images/bg-shorten-desktop.svg" alt="" aria-hidden="true" class="url-bg_img">
-     
+      <img src="images/bg-shorten-desktop.svg" alt="Illustration around input field" 
+      aria-hidden="true" 
+      class="url-bg_img">
+            
+              <!--Form  -->
   <form class="url-form" id="mainForm">
    <div class="input-message">
-    <input type="url" name="url" class="url-form_input" id="urlInput"
-    placeholder="Shorten a link here..." aria-required="true">
-  <div id="result"role="status"></div>
+    <input type="url" 
+    name="url" 
+    class="url-form_input" id="urlInput"
+    placeholder="Shorten a link here..." 
+    pattern="https?://.+"
+    title="Enter a valid URL, e.g. https://www.example.com"
+    aria-required="true">
+            <!--Div to display messages  -->
+  <div id="result-message"role="status"></div>
 </div>
-<button type="submit"class="url-form_submit"         id="shortenBtn" name="button">Shorten It!</button>
-   
+            <!-- Submit btn -->
+<button type="submit"
+     class="url-form_submit"        
+     id="shortenBtn" 
+     name="button">Shorten It!
+    </button>
    </form>
   </div>
  </section>
 </main>
 
-     <!-- Footer -->
+           <!-- Footer -->
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </footer>
   </div>
-<!-- Axios -->
+            <!-- Axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <!-- JavaScript -->
+          <!-- JavaScript -->
    <script src="script/main.js"></script>
 </body>
 </html>

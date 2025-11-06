@@ -2,77 +2,114 @@
 console.log('Hello, World')
 
 
-// Create and define varibles from html by ID (DOM Elements)
+// DOM Elements
 const form = document.getElementById('mainForm');
 const urlInput = document.getElementById('urlInput');
-const resultDiv = document.getElementById('result');
+const resultMessage = document.getElementById('result-message');
 
-    
-// API Base URL
+// URL Validation Function w/ built in Constructor(new URL) w/ str parameter.
+function isValidUrl(str) {
+    try{
+        new URL(str);
+        return true;
+    } catch {
+        return false;
+    }
+  }
 
+  // API Base URL
 const baseUrl = 'https://cleanuri.com/api/v1/shorten';
 
-// Using Axios (Async Await)
-
+ // Shorten URL Function---- Using Axios (Async Await)
 async function shortenUrl( longUrl) {
+  try {
+    console.log('Sending URL to API:' , longUrl);
+    
+    const response = await axios.post(
+        baseUrl, 
+        new URLSearchParams({url: longUrl})
+     );
 
-    try {
-        const response = await axios.post(baseUrl, new URLSearchParams({
-
-            url: longUrl})
-        );
-
+     console.log('API Response:', response.data)
         const data = await response.data;
 
         return {
-            success: true,
-            data: response.data
-        };
+         success: true,
+         data: response.data
+     };
+    
     } catch (error) {
+      console.error('API Error:', error);
+    //   Get Status code
+    let statusCode = error.response ? error.response.status : null;
+    let statusText = error.response ? error.response.statusText : error.message;
+      return {
+        success: false,
+        error: error,
+        statusCode: statusCode,
+        statusText: statusText
+     };
+   }
+ }
 
-        return {
-            success: false,
-            error: error
-        };
-
-     }
-        
-}
-console.log('response.data.result_url');
-// Handle Form submission
+//  Reset input & message when user types
+urlInput.addEventListener('input' , () => {
+    urlInput.style.border = '2px solid hsl(0, 0%, 80%)';
+    resultMessage.textContent = '';
+    resultMessage.style.color = '';
+    console.log('User is typing...');
+});
+   
+// Boolean,Valid,Success,
+// Handle Form submission (const form = mainFormId)
+// 1st parameter submit = button type
 form.addEventListener('submit', async function (e) {
     
-// Prevent page from loading
-    e.preventDefault(); 
+// Stop Page Reload (2nd parameter in ())
+e.preventDefault(); 
 
-    //  white space (trim)
+// When naming varibles what is the goal? const = emptyInput
+//  white space (trim)
 const longUrl = urlInput.value.trim();
-const resultDiv = document.getElementById('result');
-    
-// Check if input is empty
+
+// Check if input is empty (if !longUrl)
     if (!longUrl) {
-        resultDiv.textContent = 'Please add a link.';
-        
-        urlInput.style.border = '3px solid hsl(0, 87%, 67%)';
-       
-        return; 
+         resultMessage.textContent = 'Please add a link.';
+         urlInput.classList.add('error');
+         urlInput.style.border = '3px solid hsl(0, 87%, 67%)';
+         return;
+
+    }       
+// Conditional for not valid URL syntax
+    if (!isValidUrl(longUrl)) {
+    
+// Message to validate URL syntax
+        resultMessage.textContent = "Invalid URL, e.g. https://www.example.com";
+        resultMessage.style.color = 'hsl(0, 87%, 67%)';
+        urlInput.style.border = '3px solid hsl(0, 87%, 67%)';return; 
     }
+console.log(isValidUrl(longUrl));
 
-    // Can use bootstrap for this (spinner)
-resultDiv.textContent = 'Shortening URL...';
+// Valid URL (Reset styles)
+urlInput.style.border = '2px solid hsl(0, 0%, 80%)';
+resultMessage.style.color = '';
+// Can use bootstrap for this (loading spinner will translate message)
+resultMessage.textContent = 'Shortening URL...';
 
-console.log("sending Post request with:", longUrl);
+// Check point (wrap in backtics and varibles?)
+console.log("Post request:", longUrl);
 
+// Shorten URL
 const result = await shortenUrl (longUrl);
 
-if (result.success) {
-    resultDiv.style.color = 'green';
-    resultDiv.innerHTML =
+if  (result.success) {
+    console.log('URL shortened successfully');
+    resultMessage.style.color = 'green';
+    resultMessage.innerHTML =
     `<p> Shorten URL: <br> ${result.data.result_url}<p>`;
- 
-} else {
-    resultDiv.style.color = 'red';
-    resultDiv.textContent = 'Try Again!';
-
+    }else { (result.statusCode) 
+    console.log('Failed to shorten URL');
+    resultMessage.style.color = 'hsl(0, 87%, 67%)';
+    resultMessage.textContent = ` Error Code Status: ${result.statusCode}`;
     }
-});
+  });
