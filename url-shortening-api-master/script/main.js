@@ -6,6 +6,7 @@ console.log('Hello, World')
 const form = document.getElementById('mainForm');
 const urlInput = document.getElementById('urlInput');
 const resultMessage = document.getElementById('result-message');
+const renderContainer = document.getElementById('renderURL');
 
 // URL Validation Function w/ built in Constructor(new URL) w/ str parameter.
 function isValidUrl(str) {
@@ -17,6 +18,40 @@ function isValidUrl(str) {
     }
   }
 
+  // Render URL
+
+  let urlList = []
+  function renderList() {
+    renderContainer.innerHTML = '';
+
+    urlList.forEach((url) => {
+      const div = document.createElement('div');
+      div.classList.add('url-result');
+
+      div.innerHTML =
+      `<p class= "orignial-url">${url}</p>
+      <button class= 'copy-btn'>Copy</button>`;
+      
+      renderContainer.appendChild(div);
+
+    });
+  }
+  
+  // Copy Button
+    const copyButtons =document.querySelectorAll('.copy-btn');
+
+    copyButtons.forEach((btn, index) => {
+     btn.addEventListener('click', (e) => {
+      const copyUrl = urlList[index];
+      navigator.clipboard.writeText(copyUrl);
+      
+      
+      copyButtons.forEach((b) => (b.textContent = 'Copy'));
+      e.target.textContent = 'Copied';
+     });
+    });
+    
+ 
   // API Base URL
 const baseUrl = 'https://cleanuri.com/api/v1/shorten';
 
@@ -58,6 +93,7 @@ urlInput.addEventListener('input' , () => {
     urlInput.classList.remove('error');
     resultMessage.textContent = '';
     resultMessage.style.color = '';
+    renderContainer.innerHTML = '';
     console.log('User is typing...');
 });
    
@@ -83,7 +119,6 @@ const longUrl = urlInput.value.trim();
         urlInput.classList.remove('error');
       }   
 
-          
 // Conditional for not valid URL syntax
     if (!isValidUrl(longUrl)) {
     
@@ -92,6 +127,16 @@ const longUrl = urlInput.value.trim();
         resultMessage.style.color = 'hsl(0, 87%, 67%)';
         urlInput.style.border = '3px solid hsl(0, 87%, 67%)';return; 
     }
+  // Add to url to list
+    urlList.unshift(longUrl);
+    if(urlList.length > 3) urlList.pop();
+
+  // Call Function
+    renderList();
+
+
+
+
 console.log(isValidUrl(longUrl));
 
 // Valid URL (Reset styles)
@@ -117,3 +162,8 @@ if  (result.success) {
     resultMessage.textContent = ` Error Code Status: ${result.statusCode}`;
     }
   });
+
+
+
+  
+
